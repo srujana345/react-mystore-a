@@ -7,3 +7,9 @@
     background-color: #adcff1;
     border-bottom: 1px solid #e9ecef;
 }
+.App-Header-Link {
+    margin: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
