@@ -1,0 +1,34 @@
+.App-Register{
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    
+    border-radius: 5px;
+    background-color: #f9f9f9;
+
+}
+.App-Register-Box{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: aliceblue;
+    width: 50%;
+}
+.App-Register-Table{
+    /* border: 1px solid gray; */
+    margin: 5px;
+}
+.App-Register-Table td{
+    border: 1px solid gray;
+    padding: 5px;
+    margin:0px;
+}
+
+.App-Register-Table th{
+    border: 1px solid gray;
+    padding: 5px;
+    margin:0px;
+    background-color: gray;
+    color: white;
+}
