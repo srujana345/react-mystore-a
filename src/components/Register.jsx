@@ -17,7 +17,7 @@ export default function Register() {
     }
     else{
       setMsg("Welcome!")
-      txtRef.current.style.color="blue";
+      txtRef.current.style.color="green";
     setUsers([...users,user])
     setUser({name:"",email:"",password:""})
     
