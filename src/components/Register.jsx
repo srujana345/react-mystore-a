@@ -1,20 +1,26 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
 export default function Register() {
   const [users, setUsers] = useState([])
   const [user, setUser] = useState({});
   const [msg, setMsg] = useState("");
+  const txtRef=useRef();
+
   const handleSubmit = () => {
     const found=users.find(value=>value.email===user.email)
+    
     if(found){
       setMsg("User already exists")
+      txtRef.current.style.color="red";
     }
     else{
-      setMsg("")
+      setMsg("Welcome!")
+      txtRef.current.style.color="blue";
     setUsers([...users,user])
     setUser({name:"",email:"",password:""})
+    
     }
   };
   const handleDelete = (email) => {
@@ -24,7 +30,7 @@ export default function Register() {
     <div className="App-Register">
       <div className="App-Register-Box">
         <h3>Registration Form</h3>
-        {msg}
+        <h3 ref={txtRef}>{msg}</h3>
         <p>
           <input
             type="text"
