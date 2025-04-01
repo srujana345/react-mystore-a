@@ -1,13 +1,13 @@
 import React from "react";
-import { useState,useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState,useRef,useContext } from "react";
+import { Link , useNavigate} from "react-router-dom";
 import "./Register.css";
+import { appContext } from "../App";
 export default function Register() {
-  const [users, setUsers] = useState([])
-  const [user, setUser] = useState({});
+  const{users,setUsers,user,setUser}=useContext(appContext)
   const [msg, setMsg] = useState("");
   const txtRef=useRef();
-
+  const navigate = useNavigate();
   const handleSubmit = () => {
     const found=users.find(value=>value.email===user.email)
     
@@ -19,9 +19,10 @@ export default function Register() {
       setMsg("Welcome!")
       txtRef.current.style.color="green";
     setUsers([...users,user])
-    setUser({name:"",email:"",password:""})
+    // setUser({name:"",email:"",password:""})
     
     }
+    navigate('/'); 
   };
   const handleDelete = (email) => {
     setUsers(users.filter((value) => value.email !== email))
@@ -56,7 +57,8 @@ export default function Register() {
           />
         </p>
         <p>
-          <button onClick={handleSubmit}>Submit</button>
+         <button onClick={handleSubmit}>Submit</button>
+          
         </p>
         <p>
           <Link to="../login">Already a member? Login here!</Link>
